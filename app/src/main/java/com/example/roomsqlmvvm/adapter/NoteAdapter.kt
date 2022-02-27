@@ -14,7 +14,7 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     }
 
-    private var notes = mutableListOf<NoteModel>()
+    private var notes = listOf<NoteModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)
@@ -28,7 +28,7 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     override fun getItemCount(): Int = notes.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setNotes(list: MutableList<NoteModel>) {
+    fun setNotes(list: List<NoteModel>) {
         notes = list
         notifyDataSetChanged()
     }
