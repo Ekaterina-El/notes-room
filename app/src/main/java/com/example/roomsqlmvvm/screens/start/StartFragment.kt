@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.roomsqlmvvm.APP
 import com.example.roomsqlmvvm.R
 import com.example.roomsqlmvvm.adapter.NoteAdapter
+import com.example.roomsqlmvvm.model.NoteModel
 import kotlinx.android.synthetic.main.fragment_start.view.*
 
 class StartFragment : Fragment(R.layout.fragment_start) {
@@ -30,6 +31,14 @@ class StartFragment : Fragment(R.layout.fragment_start) {
 
         mView.btn_add.setOnClickListener {
             APP.navController.navigate(R.id.action_startFragment_to_addNoteFragment)
+        }
+    }
+
+    companion object {
+        fun onClickNote(noteModel: NoteModel) {
+            val bundle = Bundle()
+            bundle.putSerializable("note", noteModel)
+            APP.navController.navigate(R.id.action_startFragment_to_detailNoteFragment, bundle)
         }
     }
 }
