@@ -25,8 +25,7 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         adapter = NoteAdapter()
         mView.rv_notes.adapter = adapter
         viewModel.getAllNotes().observe(viewLifecycleOwner) { listNotes ->
-            listNotes.asReversed()
-            adapter.setNotes(listNotes)
+            adapter.setNotes(listNotes.asReversed())
         }
 
         mView.btn_add.setOnClickListener {
