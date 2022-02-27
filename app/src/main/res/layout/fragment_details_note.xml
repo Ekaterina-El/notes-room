@@ -4,50 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.addNote.AddNoteFragment">
+    tools:context=".screens.detailsNote.DetailsNoteFragment">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_note"
-        android:textColor="@color/green"
+
+        android:layout_marginTop="32dp"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        android:layout_marginTop="40dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title" />
 
-    <EditText
-        android:id="@+id/et_add_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        android:hint="@string/title"
-        app:layout_constraintTop_toBottomOf="@id/title" />
-
-    <EditText
-        android:id="@+id/et_add_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="@string/description"
-        android:layout_marginTop="20dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_add_title" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_add"
+    <TextView
+        android:id="@+id/details_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add"
+
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_title"
+        tools:text="Description" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
         android:textAllCaps="false"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_back"
@@ -64,4 +55,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="30dp"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
